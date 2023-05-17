@@ -14,3 +14,13 @@ app.use("/record", records);
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+
+mongoose.connect(
+  "mongodb://localhost/holodex",
+  () => {
+    console.log("Connected to HoloDex DB");
+  },
+  (err) => {
+    console.error(err);
+  }
+);
