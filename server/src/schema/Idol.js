@@ -35,6 +35,10 @@ idolSchema.statics.findByName = function (name) {
   return this.find({ name });
 };
 
+idolSchema.query.bySubcount = function (subcount) {
+  return this.where("subcount").equals(subcount);
+};
+
 idolSchema.pre("save", function (next) {
   // Perform an update of `updatedAt` time to reflect time of changes
   this.updatedAt = Date.now();
